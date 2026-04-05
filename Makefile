@@ -83,7 +83,7 @@ ts-to-policy:
 	deepin-policy-ts-convert ts2policy misc/polkit-action/org.deepin.dde.locale-helper.policy.in misc/ts/org.deepin.dde.locale-helper.policy misc/polkit-action/org.deepin.dde.locale-helper.policy
 	deepin-policy-ts-convert ts2policy misc/polkit-action/org.deepin.dde.device.unblock-bluetooth-devices.policy.in misc/ts/org.deepin.dde.device.unblock-bluetooth-devices.policy misc/polkit-action/org.deepin.dde.device.unblock-bluetooth-devices.policy
 
-out/bin/%:
+out/bin/%: prepare
 	${GOBUILD} -o $@ ${GOBUILD_OPTIONS} ${GOPKG_PREFIX}/${@F}
 
 build-binary: prepare $(addprefix out/bin/, ${BINARIES})
